@@ -1,7 +1,8 @@
-# Htmxxx - htmx but sexier
+# Htmxxx: htmx but sexier
 
-`htmxxx` comprises just 2 attributes and 2 functions for you to learn.
-it is 941 bytes - that's ~14x smaller than `htmx`
+`htmxxx` comprises just 2 attributes for you to learn.
+all this is implemented in 2 functions.
+it is 941 bytes minified - that's ~14x smaller than `htmx` min/gzip'd.
 a truly lean framework for interactivity that exposes just enough.
 
 ## Usage
