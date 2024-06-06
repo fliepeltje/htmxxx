@@ -1,16 +1,13 @@
 const parser = new DOMParser();
 
 function patchElement(element) {
-    console.log("patching", element);
     if (element.tagName === 'A') {
         element.addEventListener('click', (event) => {
             event.preventDefault();
             fetch(element.href)
                 .then(response => response.text())
                 .then(data => performUpdate(data))
-                .catch(error => {
-                    console.error('Error fetching link content:', error);
-                });
+                .catch(_ => {});
         });
     } else if (element.tagName === 'FORM') {
         element.addEventListener('submit', (event) => {
@@ -25,9 +22,7 @@ function patchElement(element) {
                 fetch(urlWithQueryParams)
                     .then(response => response.text())
                     .then(data => performUpdate(data))
-                    .catch(error => {
-                        console.error('Error fetching form content:', error);
-                    });
+                    .catch(_ => {});
             } else {
                 fetch(url, {
                     method: method,
@@ -35,9 +30,7 @@ function patchElement(element) {
                 })
                 .then(response => response.text())
                 .then(data => performUpdate(data))
-                .catch(error => {
-                    console.error('Error fetching form content:', error);
-                });
+                .catch(_ => {});
             }
         });
     }

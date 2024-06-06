@@ -1,7 +1,7 @@
 # Htmxxx - htmx but sexier
 
 `htmxxx` comprises just 2 attributes and 2 functions for you to learn.
-it is 1.1kb - that's ~14x smaller than `htmx`
+it is 941 bytes - that's ~14x smaller than `htmx`
 a truly lean framework for interactivity that exposes just enough.
 
 ## Usage
