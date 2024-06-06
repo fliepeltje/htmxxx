@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Htmxxx</title>
+</head>
+<body>
+    <h1>htmx but sexier</h1>
+    <p>Sexify your elements using the <code>xxx</code> attribute</p>
+    <pre>
+        <code>
+            &lt;h1 id="target-element"&gt;update me&lt;/h1&gt;
+            &lt;a href="/get-update" xxx&gt;Click me&lt;/a&gt;
+        </code>
+    </pre>
+
+    <p>Return an update</p>
+    <pre>
+        <code>
+            &lt;div xxx-update="target-element"&gt;
+                &lt;h1 id="target-element" xxx&gt;Updated&lt;/h1&gt;
+            &lt;/div&gt;
+        </code>
+    </pre>
+    <a href="/script.min.js">Download</a>
+</body>
+<style>
+    body {
+        width: 300px;
+        margin: 0 auto;
+    }
+</style>
+</html>
