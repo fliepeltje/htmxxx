@@ -11,7 +11,6 @@ function patchElement(element) {
                 .catch(error => {
                     console.error('Error fetching link content:', error);
                 });
-            performUpdate(element.href);
         });
     } else if (element.tagName === 'FORM') {
         element.addEventListener('submit', (event) => {
@@ -51,8 +50,9 @@ function performUpdate(htmldata) {
         target_id = element.getAttribute('xxx-update');
         target = document.getElementById(target_id);
         target.outerHTML = element.innerHTML;
-        target.querySelectorAll('[xxx]').forEach(patchElement);
     });
+    const topatch = document.querySelectorAll('[xxx]');
+    topatch.forEach(patchElement);
 
 }
 
