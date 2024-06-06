@@ -2,7 +2,7 @@
 
 `htmxxx` comprises just 2 attributes and 2 functions for you to learn.
 it is 1.1kb - that's ~14x smaller than `htmx`
-a truly lean framework for interactivity.
+a truly lean framework for interactivity that exposes just enough.
 
 ## Usage
 
@@ -21,3 +21,29 @@ Return an element wrapped in an element with the `xxx-update` attribute set to t
 </div>
 ```
 
+## Advanced Usage
+
+You can send multiple updates in 1 response:
+
+```html
+<div xxx-update="target-1">
+    ...
+</div>
+<div xxx-update="target-2">
+    ...
+</div>
+```
+
+You can send new interactive elements in a response
+
+```html
+<div xxx-update="target-1">
+    <a href="/bloop" xxx>Click me</a>
+</div>
+```
+
+You can delete elements with an empty update
+
+```html
+<div xxx-update="target-1"><div>
+```
