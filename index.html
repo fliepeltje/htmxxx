@@ -1,50 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Htmxxx</title>
 </head>
-<body>
 
+<body>
     <h1 id="htmxxx-htmx-but-sexier">Htmxxx: htmx but sexier</h1>
     <p><code>htmxxx</code> comprises just 2 attributes for you to learn.
     all this is implemented in 2 functions.
-    it is 941 bytes minified - that's ~14x smaller than <code>htmx</code> min/gzip'd.
+    it is 941 bytes minified - that&#39;s ~14x smaller than <code>htmx</code> min/gzip&#39;d.
     a truly lean framework for interactivity that exposes just enough.</p>
+    <p><a href="https://github.com/fliepeltje/htmxxx">Repository</a></p>
     <h2 id="usage">Usage</h2>
-    <p>Make your elements sexy by adding the <code>xxx</code> attribute.</p>
-    <pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"target-element"</span>&gt;</span>I will get updated<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <p>Make your <code>a</code> or <code>form</code> elements sexy by adding the <code>xxx</code> attribute.</p>
+    <pre><code class="lang-html">
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"target-element"</span>&gt;</span>I will get updated<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    
     <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/get-update"</span> <span class="hljs-attr">xxx</span>&gt;</span>Click Me<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-    </div></code></pre>
+    </code></pre>
     <p>Return an element wrapped in an element with the <code>xxx-update</code> attribute set to the target of the <code>id</code> you want to replace.</p>
-    <pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">xxx-update</span>=<span class="hljs-string">"target-element"</span>&gt;</span>
+    <pre><code class="lang-html">
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">xxx-update</span>=<span class="hljs-string">"target-element"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"target-element"</span>&gt;</span>Sexy update<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    </div></code></pre>
+    </code></pre>
     <h2 id="advanced-usage">Advanced Usage</h2>
     <p>You can send multiple updates in 1 response:</p>
-    <pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">xxx-update</span>=<span class="hljs-string">"target-1"</span>&gt;</span>
-        ...
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">xxx-update</span>=<span class="hljs-string">"target-2"</span>&gt;</span>
-        ...
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    </div></code></pre>
+    <pre><code class="lang-html">
+    &lt;<span class="hljs-keyword">div</span> xxx-update=<span class="hljs-string">"target-1"</span>&gt;...&lt;/<span class="hljs-keyword">div</span>&gt;
+    &lt;<span class="hljs-keyword">div</span> xxx-update=<span class="hljs-string">"target-2"</span>&gt;...&lt;/<span class="hljs-keyword">div</span>&gt;
+    </code></pre>
     <p>You can send new interactive elements in a response</p>
-    <pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">xxx-update</span>=<span class="hljs-string">"target-1"</span>&gt;</span>
+    <pre><code class="lang-html">
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">xxx-update</span>=<span class="hljs-string">"target-1"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/bloop"</span> <span class="hljs-attr">xxx</span>&gt;</span>Click me<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    </div></code></pre>
+    </code></pre>
     <p>You can delete elements with an empty update</p>
-    <pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">xxx-update</span>=<span class="hljs-string">"target-1"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
-    </div></code></pre>
+    <pre><code class="lang-html">
+    &lt;<span class="hljs-keyword">div</span> xxx-update=<span class="hljs-string">"target-1"</span>&gt;&lt;<span class="hljs-keyword">div</span>&gt;
+    </code></pre>
     <h2 id="install">Install</h2>
+    <h3 id="copy-paste-source">copy-paste source</h3>
     <p><a href="https://htmxxx.fly.dev/script.min.js">View source</a></p>
-    <p>or use <code>curl</code></p>
-    <pre class="hljs"><code><div>curl https://htmxxx.fly.dev/script.min.js &gt; htmxxx.js
-    </div></code></pre>
-    <p><a href="https://github.com/fliepeltje/htmxxx">Repository</a></p>
+    <h3 id="curl-into-a-local-file">curl into a local file</h3>
+    <pre><code class="lang-sh">curl <span class="hljs-string">https:</span><span class="hljs-comment">//htmxxx.fly.dev/script.min.js &gt; htmxxx.js</span>
+    </code></pre>
+    <h3 id="include-in-html-file">include in html file</h3>
+    <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://htmxxx.fly.dev/script.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    </code></pre>
+    
+
 </body>
 <style>
     body {
@@ -52,4 +61,6 @@
         margin: 0 auto;
     }
 </style>
+
+
 </html>
