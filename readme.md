@@ -58,3 +58,5 @@ or use `curl`
 ```sh
 curl https://htmxxx.fly.dev/script.min.js > htmxxx.js
 ```
+
+[Repository](https://github.com/fliepeltje/htmxxx)
