@@ -48,3 +48,13 @@ You can delete elements with an empty update
 ```html
 <div xxx-update="target-1"><div>
 ```
+
+## Install
+
+[View source](https://htmxxx.fly.dev/script.min.js)
+
+or use `curl`
+
+```sh
+curl https://htmxxx.fly.dev/script.min.js > htmxxx.js
+```
