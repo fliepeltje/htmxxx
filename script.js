@@ -1,7 +1,7 @@
 const parser = new DOMParser();
 
 function patchElement(element) {
-    if (element.tagName === 'A') {
+    if (element.tagName === 'A' && !element.patched) {
         element.addEventListener('click', (event) => {
             event.preventDefault();
             fetch(element.href)
@@ -9,7 +9,7 @@ function patchElement(element) {
                 .then(data => performUpdate(data))
                 .catch(_ => {});
         });
-    } else if (element.tagName === 'FORM') {
+    } else if (element.tagName === 'FORM' && !element.patched) {
         element.addEventListener('submit', (event) => {
             event.preventDefault();
             const formData = new FormData(element);
@@ -34,6 +34,7 @@ function patchElement(element) {
             }
         });
     }
+    element.patched = true;
 }
 
 function performUpdate(htmldata) {
