@@ -1,8 +1,9 @@
 import markdown2
 import uvicorn
 from fastapi import FastAPI
+from pydantic import BaseModel
 from fastapi.requests import Request
-from fastapi.responses import PlainTextResponse
+from fastapi.responses import PlainTextResponse, HTMLResponse
 from jinja2 import Template
 from jsmin import jsmin
 
@@ -16,7 +17,9 @@ site_template = Template("""
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Htmxxx</title>
 </head>
-<body> {{ html|safe }} </body>                    
+<body> 
+{{ html|safe }}
+</body>                    
 <style>
     body {
         width: 400px;
@@ -30,17 +33,21 @@ site_template = Template("""
 async def wake_up():
     return "woke"
 
-@app.post("/minify", response_class=PlainTextResponse)
-async def minify(request: Request):
-    js = await request.body()
-    return jsmin(js)
+class Minify(BaseModel):
+    js: str
 
-@app.post("/gen-site", response_class=PlainTextResponse)
-async def gen_site(request: Request):
-    md = await request.body()
-    html = markdown2.markdown(md, extras=["fenced-code-blocks"])
-    index = site_template.render(html=html)
-    return index
+@app.post("/minify", response_class=PlainTextResponse)
+async def minify(minify: Minify):
+    return jsmin(minify.js)
+
+class Markdown(BaseModel):
+    md: str
+
+@app.post("/gen-site", response_class=HTMLResponse)
+async def gen_site(md: Markdown):
+    downer = markdown2.Markdown(extras=["fenced-code-blocks"])
+    html = downer.convert(md.md)
+    return site_template.render(html=html)
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8080)

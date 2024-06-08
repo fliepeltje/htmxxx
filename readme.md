@@ -5,7 +5,7 @@ all this is implemented in 2 functions.
 it is 941 bytes minified - that's ~14x smaller than `htmx` min/gzip'd.
 a truly lean framework for interactivity that exposes just enough.
 
-[Repository](https://github.com/fliepeltje/htmxxx) & [demo](https://htmxxx.fly.dev/)
+[Repository](https://github.com/fliepeltje/htmxxx) & [demo](https://demo-htmxxx.fly.dev/)
 
 ## Usage
 
@@ -77,6 +77,4 @@ curl https://htmxxx.fly.dev/script.min.js > htmxxx.js
 <script src="https://htmxxx.fly.dev/script.min.js"></script>
 ```
 
-
-
-
+dont though.
